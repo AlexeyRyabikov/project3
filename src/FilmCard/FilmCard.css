@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+.filmcard{
+    white-space:normal;
+    width: 454px;
+    height: 281px;
+    margin:0;
+    box-shadow: 2px 2px 5px 3px rgb(185, 184, 184);
+}
+*{
+    font-family:"Inter";
+    /* font-size:12px; */
+}
+h3{
+    font-family:"inter UI","Inter";
+    font-size:20px;
+    font-weight: initial;
+}
+.film_date{
+    font-family:"Inter";
+    color: #827E7E;
+    font-weight: initial;
+}
+.filmcard__description{
+    width: 100px;
+    padding:0;
+    padding-left:30px;
+    margin:0;
+}
+.filmcard__spinner {
+    position:absolute;
+    top:40%;
+    width:100%;
+    /* text-align: center; */
+    border-radius: 4px;
+  }
+.filmcard__image{
+    white-space:normal;
+    height:100%
+}
+.filmcard__place{
+    margin:5px 0px;
+}
+.image{
+    /* margin:0;
+    padding:0; */
+    height:100%;
+}
+.border{
+    border:1px solid black;
+}
+.borderblue{
+    border:3x solid blue;
+}
+.borderRed{
+    border:3x solid red;
+}
+.description{
+    white-space:normal;
+    word-wrap: break-word;
+}
+/* .InterfaceWraper{
+    width:100%;
+    height:100%;
+    border:2px solid rgb(70, 42, 171);
+    display:flex;
+    justify-content:center;
+    align-items: center;
+} */
+.insideWraper{
+    display:flex;
+    flex-direction: column;
+    max-width:1010px;
+    min-height:100vh;
+    /* border:2px solid red; */
+    background-color:rgb(255,255,255);
+}
+.cardWraper{
+    flex-grow: 1;
+    padding:0 50px;
+}
+.InterfaceWraper{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    /* align-items: stretch; */
+    background-color:rgb(220, 220, 220);
+}
+.PaginationWraper{
+    padding:35px;
+display:flex;
+justify-content:center;
+}
+.inputWraper{
+    margin:22px 40px;
+}
+.Error-view{
+    position: fixed;
+    bottom:30px;
+    /* left:0; */
+    width:60%;
+    font-family:"inter UI","Inter";
+    font-size:50px;
+}
+.CardRate{
+    position:absolute;
+    right:20px;
+    bottom:20px;
+}
