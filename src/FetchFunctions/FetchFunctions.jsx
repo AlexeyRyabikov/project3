@@ -15,8 +15,8 @@ const FetchFilmInfo = function (searchtext, pagenumber = 1) {
     fetch(url, options)
       .then((result) => result.json())
       .then((result) => {
-        console.log(result);
-        console.log("вынесенный fetch работает");
+        // console.log(result);
+        // console.log("вынесенный fetch работает");
         this.setState({ received: result.results, loading: false });
       });
   }
@@ -24,7 +24,7 @@ const FetchFilmInfo = function (searchtext, pagenumber = 1) {
 
 const FetchGenres = function () {
   const genreIdsUrl = "https://api.themoviedb.org/3/genre/movie/list?language=en";
-  fetch(genreIdsUrl, options)
+  return fetch(genreIdsUrl, options)
     .then((result) => result.json())
     .then(
       (result) =>
@@ -69,7 +69,7 @@ const SetGrade = function (filmID, newGrade, GuestSessionID = "7f37b12ef80b00468
   };
   fetch(url, options)
     .then((res) => res.json())
-    .then((json) => console.log(json))
+    // .then((json) => console.log(json))
     .catch((err) => console.error(`error:${err}`));
 };
 const FetchGraded = function (GuestSessionID = "7f37b12ef80b0046861534590ca62273") {

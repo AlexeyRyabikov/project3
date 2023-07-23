@@ -11,13 +11,13 @@ const setFilmToStorage = function (filmID, grade) {
   }
   parsedContaining[filmID] = grade;
   localStorage.setItem("RatedFilms", JSON.stringify(parsedContaining));
-  console.log(localStorage.getItem("RatedFilms"));
+  // console.log(localStorage.getItem("RatedFilms"));
 };
 const getRatedFilms = function () {
   const needArray = [];
   const LocalStorageObject = JSON.parse(localStorage.getItem("RatedFilms"));
   // Promise.all(iterable)
-  console.log(LocalStorageObject);
+  // console.log(LocalStorageObject);
   // console.log(Object.keys(LocalStorageObject));
   for (let i = 0; i < Object.keys(LocalStorageObject).length; i += 1) {
     needArray[i] = FetchMovieInfoById(Object.keys(LocalStorageObject)[i]);
@@ -30,7 +30,7 @@ const getRatedFilms = function () {
       pageLength -= 20;
     }
     pageMass.push(pageLength);
-    console.log(pageMass);
+    // console.log(pageMass);
     if (pageMass[this.state.paginationValue - 1] === undefined) {
       return;
     }
@@ -48,4 +48,7 @@ const getRatedFilms = function () {
   // setTimeout(() => console.log(needObject), 5000)();
   // }
 };
-export { setFilmToStorage, getRatedFilms };
+const getRates = function () {
+  return JSON.parse(localStorage.getItem("RatedFilms"));
+};
+export { setFilmToStorage, getRatedFilms, getRates };

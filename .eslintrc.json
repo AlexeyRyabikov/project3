@@ -60,6 +60,7 @@
       "import/no-extraneous-dependencies":"off",
       "import/no-named-as-default": 0,
       "import/no-named-as-default-member": 0,
+      "react/jsx-no-useless-fragment":0,
       // "prefer-const":"off",
       "import/order": [
         2,

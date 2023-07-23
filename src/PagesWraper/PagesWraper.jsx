@@ -10,10 +10,10 @@ import { FetchGenres } from "../FetchFunctions/FetchFunctions";
 function PagesWraper() {
   const id1 = 1;
   const id2 = 2;
-  const Genres = FetchGenres();
+  const Genres = FetchGenres().then((res) => res);
   return (
-    <GenresProvider value={Genres}>
-      <div className="InterfaceWraper">
+    <div className="InterfaceWraper">
+      <GenresProvider value={Genres}>
         <section className="insideWraper">
           <Tabs
             defaultActiveKey="1"
@@ -35,8 +35,8 @@ function PagesWraper() {
         <Offline>
           <Alert className="Error-view" message="нет сети" type="error" showIcon />
         </Offline>
-      </div>
-    </GenresProvider>
+      </GenresProvider>
+    </div>
   );
 }
 export default PagesWraper;

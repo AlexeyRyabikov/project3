@@ -1,4 +1,4 @@
 import React from "react";
 
-const { Provider: GenresProvider, Comsumer: GenresConsumer } = React.createContext();
+const { Provider: GenresProvider, Consumer: GenresConsumer } = React.createContext();
 export { GenresProvider, GenresConsumer };
