@@ -5,20 +5,15 @@ const setFilmToStorage = function (filmID, grade) {
   let parsedContaining;
   if (storageContains === null) {
     parsedContaining = {};
-    // localStorage.setItem("RatedFilms", "{}");
   } else {
     parsedContaining = JSON.parse(storageContains);
   }
   parsedContaining[filmID] = grade;
   localStorage.setItem("RatedFilms", JSON.stringify(parsedContaining));
-  // console.log(localStorage.getItem("RatedFilms"));
 };
 const getRatedFilms = function () {
   const needArray = [];
   const LocalStorageObject = JSON.parse(localStorage.getItem("RatedFilms"));
-  // Promise.all(iterable)
-  // console.log(LocalStorageObject);
-  // console.log(Object.keys(LocalStorageObject));
   for (let i = 0; i < Object.keys(LocalStorageObject).length; i += 1) {
     needArray[i] = FetchMovieInfoById(Object.keys(LocalStorageObject)[i]);
   }
@@ -30,7 +25,6 @@ const getRatedFilms = function () {
       pageLength -= 20;
     }
     pageMass.push(pageLength);
-    // console.log(pageMass);
     if (pageMass[this.state.paginationValue - 1] === undefined) {
       return;
     }
@@ -39,14 +33,6 @@ const getRatedFilms = function () {
     }
     this.setState({ received: results, loading: false });
   });
-  // .then((results) => {
-  //   console.log(results);
-  // });
-  // .then((results) => {
-  //   this.setState({ received: results, loading: false });
-  // });
-  // setTimeout(() => console.log(needObject), 5000)();
-  // }
 };
 const getRates = function () {
   return JSON.parse(localStorage.getItem("RatedFilms"));

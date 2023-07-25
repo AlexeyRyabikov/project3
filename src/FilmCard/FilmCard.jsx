@@ -1,9 +1,7 @@
 import { Col, Row, Image, Space, Tag, Typography, Spin, Progress, Rate } from "antd";
-import { StarFilled } from "@ant-design/icons";
-// import { Text } from "react";
 import "./FilmCard.css";
-import { format, compareAsc, parse } from "date-fns";
-import { useState, Fragment, Component } from "react";
+import { format, parse } from "date-fns";
+import { Component } from "react";
 
 import { setFilmToStorage } from "../LocalStorageFunctions/LocalStorageFunctions";
 
@@ -13,7 +11,6 @@ class FilmCard extends Component {
   constructor() {
     super();
     this.state = { TagsLoaded: [] };
-    // this.props.genreIds.then((TagsLoad) => this.setState({ TagsLoaded: TagsLoad }));
   }
 
   componentDidMount() {
@@ -28,24 +25,12 @@ class FilmCard extends Component {
         this.setState({ TagsLoaded: res });
       });
     }
-    // this.props.genreIds.then((res) => res).then((TagsLoad) => this.setState({ TagsLoaded: TagsLoad }));
   }
 
   render() {
     const { filminfo, genreIds, loading, mark } = this.props;
     let Genres;
     const TagMass = genreIds;
-    // genreIds.then((res) => {
-    //   TagMass = filminfo.genre_ids.map((el) => {
-    //     const genre = res.find((el1) => el1.id === el);
-    //     return <Tag>{genre.name}</Tag>;
-    //   });
-    // });
-
-    // setEllipsis({ rows: 4, expandable: true, symbol: "more" });
-    // const url = `https://image.tmdb.org/t/p/w500${filminfo.poster_path}`;
-    // const url = `https://image.tmdb.org/t/p/w500/bj2G0KQBWCWunW97mZcFuPwAWwR.jpg`;
-
     let DataFormated = "";
     if (filminfo.release_date) {
       const data = parse(filminfo.release_date, "yyyy-M-d", new Date());
@@ -59,8 +44,6 @@ class FilmCard extends Component {
     return (
       <Row gutter={[10, 10]} className="filmcard border">
         {fillFilmCard}
-        {/* <CardContent filminfo={filminfo} TagMass={TagMass} DataFormated={DataFormated} /> */}
-        {/* <Spin size="large" className="filmcard__spinner" /> */}
       </Row>
     );
   }
@@ -101,9 +84,6 @@ const CardContent = function ({ filminfo, TagMass, DataFormated, mark }) {
                 fontWeight: "initial",
                 lineHeight: 1.25,
                 height: 50,
-                // overflow: "hidden",
-                // whiteSpace: "nowrap",
-                // textOverflow: "ellipsis",
               }}
             >
               {filminfo.title}
@@ -141,8 +121,6 @@ const CardContent = function ({ filminfo, TagMass, DataFormated, mark }) {
         onChange={(e) => {
           setFilmToStorage(filminfo.id, e);
         }}
-        // character="A"
-        // character={<StarFilled className="Card__Rate"/>}
       />
     </Row>
   );

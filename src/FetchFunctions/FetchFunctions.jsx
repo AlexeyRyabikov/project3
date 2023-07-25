@@ -15,8 +15,6 @@ const FetchFilmInfo = function (searchtext, pagenumber = 1) {
     fetch(url, options)
       .then((result) => result.json())
       .then((result) => {
-        // console.log(result);
-        // console.log("вынесенный fetch работает");
         this.setState({ received: result.results, loading: false });
       });
   }
@@ -26,12 +24,7 @@ const FetchGenres = function () {
   const genreIdsUrl = "https://api.themoviedb.org/3/genre/movie/list?language=en";
   return fetch(genreIdsUrl, options)
     .then((result) => result.json())
-    .then(
-      (result) =>
-        // console.log("genres", result);
-        result.genres
-      // this.setState({ genreIds: result.genres });
-    )
+    .then((result) => result.genres)
     .catch(() => this.setState({ error: true }));
 };
 
@@ -69,7 +62,6 @@ const SetGrade = function (filmID, newGrade, GuestSessionID = "7f37b12ef80b00468
   };
   fetch(url, options)
     .then((res) => res.json())
-    // .then((json) => console.log(json))
     .catch((err) => console.error(`error:${err}`));
 };
 const FetchGraded = function (GuestSessionID = "7f37b12ef80b0046861534590ca62273") {
@@ -98,12 +90,9 @@ const FetchMovieInfoById = function (filmID) {
         "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2MWY1OGJiMWQ4NTE5OGRmMTQ3YWZiZTA3NTUzMzdjMiIsInN1YiI6IjY0N2ExZGZjZTMyM2YzMDBjNDI5NmEyMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.em_tCx3-GCvH6kJHLsrqYgTnvxUcDn7IaUuZ9GSuIS0",
     },
   };
-  return (
-    fetch(url, options)
-      .then((res) => res.json())
-      // .then((json) => console.log(json))
-      .catch((err) => console.error(`error:${err}`))
-  );
+  return fetch(url, options)
+    .then((res) => res.json())
+    .catch((err) => console.error(`error:${err}`));
 };
 
 export { FetchFilmInfo, FetchGenres, CreateGuestSession, SetGrade, FetchGraded, FetchMovieInfoById };

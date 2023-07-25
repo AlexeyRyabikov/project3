@@ -4,7 +4,6 @@ import { Offline } from "react-detect-offline";
 
 import { GenresProvider, GenresConsumer } from "../FilmContext/FilmContext";
 import FilmPage from "../FilmPage/FilmPage";
-import FilmCard from "../FilmCard/FilmCard";
 import { FetchGenres } from "../FetchFunctions/FetchFunctions";
 
 function PagesWraper() {
@@ -20,7 +19,7 @@ function PagesWraper() {
             centered
             items={[
               {
-                label: `search`,
+                label: `Search`,
                 key: id1,
                 children: <FilmPage />,
               },
