@@ -68,7 +68,6 @@ const CardContent = function ({ filminfo, TagMass, DataFormated, mark }) {
           src={`https://image.tmdb.org/t/p/w500${filminfo.poster_path}`}
           alt="huy"
           height="100%"
-          // className="image"
           fallback="./FilmCard.png"
         />
       </Col>

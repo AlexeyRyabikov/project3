@@ -2,7 +2,7 @@ import { Tabs } from "antd";
 import { Alert } from "antd";
 import { Offline } from "react-detect-offline";
 
-import { GenresProvider, GenresConsumer } from "../FilmContext/FilmContext";
+import { GenresProvider } from "../FilmContext/FilmContext";
 import FilmPage from "../FilmPage/FilmPage";
 import { FetchGenres } from "../FetchFunctions/FetchFunctions";
 
